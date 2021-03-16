@@ -1,0 +1,24 @@
+Num=int(input("Enter the number of element in list"))
+li=[]
+for i in range (Num+1):
+    element=int(input("Enter the element"))
+    li.append(element)
+li.sort()
+print("Entered elements are")
+print(li)
+selement=int(input("Enter the search element"))
+found=False
+first=0
+last=Num-1
+while(first<=last and not found):
+    mid=(first+last)//2
+    if li[mid]==selement:
+        found=True
+    elif li[mid]<selement:
+        first=mid+1
+    else:
+        last=mid-1
+if found==True:
+    print("Element found at position",mid+1)
+else:
+    print("Element not found")
